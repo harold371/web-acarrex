@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AcArrex Mudanzas - Mudanzas Rápidas y Seguras</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <span class="site-title">AcArrex Mudanzas</span>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li class="dropdown">
+                        <a href="#cotizacion">Cobertura y Cotización <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="#cotizar-residencial">Cotizar Residencial</a>
+                            <a href="#cotizar-comercial">Cotizar Comercial</a>
+                            <a href="#areas-cobertura">Áreas de Cobertura</a>
+                        </div>
+                    </li>
+                    <li><a href="#servicios">Nuestros Servicios</a></li>
+                    <li><a href="#testimonios">Testimonios</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="contact-info">
+                <span>Llámanos: 320 958 1095</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Mudanzas Rápidas y Seguras con AcArrex</h1>
+                <p>Tu mejor opción para mudanzas residenciales y comerciales en Colombia.</p>
+                <a href="#cotizacion" class="btn-primary" id="cotizarBtn">¡Cotiza tu Mudanza Ahora!</a>
+            </div>
+        </section>
+
+        <section class="featured-services" id="servicios">
+            <div class="container">
+                <h2>Nuestros Servicios Destacados</h2>
+                <p class="section-description">En AcArrex, nos encargamos de todo para que tu mudanza sea una experiencia sin estrés.</p>
+                <div class="service-cards">
+                    <div class="service-card">
+                        <i class="fas fa-box-open icon-large"></i>
+                        <h3>Embalaje Profesional</h3>
+                        <p>Protegemos tus pertenencias con los mejores materiales.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-truck-moving icon-large"></i>
+                        <h3>Transporte Seguro</h3>
+                        <p>Nuestra flota garantiza un traslado eficiente y seguro.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-chair icon-large"></i>
+                        <h3>Desmontaje y Montaje</h3>
+                        <p>Expertos en el manejo de muebles y enseres.</p>
+                    </div>
+                    </div>
+            </div>
+        </section>
+
+        <section class="quote-section" id="cotizacion">
+            <div class="container">
+                <h2>Cotiza tu Mudanza</h2>
+                <form class="quote-form">
+                    <div class="form-group">
+                        <label for="tipoMudanza">Tipo de Mudanza:</label>
+                        <select id="tipoMudanza" name="tipoMudanza">
+                            <option value="residencial">Residencial</option>
+                            <option value="comercial">Comercial</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="origen">Origen:</label>
+                        <input type="text" id="origen" name="origen" placeholder="Ciudad de Origen" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="destino">Destino:</label>
+                        <input type="text" id="destino" name="destino" placeholder="Ciudad de Destino" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fecha">Fecha Preferida:</label>
+                        <input type="date" id="fecha" name="fecha" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="volumen">Volumen Estimado (m³):</label>
+                        <input type="number" id="volumen" name="volumen" min="1" placeholder="Ej: 10" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="descripcion">Descripción Adicional:</label>
+                        <textarea id="descripcion" name="descripcion" rows="4" placeholder="Detalles de tus pertenencias, acceso, etc."></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Enviar Cotización</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="testimonials-section" id="testimonios">
+            <div class="container">
+                <h2>Lo que Dicen Nuestros Clientes</h2>
+                <div class="testimonial-slider">
+                    <div class="testimonial-item">
+                        <p>"Excelente servicio, rápido y muy profesional. ¡Recomendados 100%!"</p>
+                        <span>- María P. (Bogotá)</span>
+                    </div>
+                    <div class="testimonial-item">
+                        <p>"Mi mudanza comercial fue un éxito, todo en perfecto estado y a tiempo."</p>
+                        <span>- Carlos R. (Medellín)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section" id="contacto">
+            <div class="container">
+                <h2>Contáctanos</h2>
+                <p>¿Tienes preguntas o necesitas ayuda? Estamos aquí para asistirte.</p>
+                <div class="contact-methods">
+                    <p><i class="fas fa-phone-alt"></i> Teléfono: 320 958 1095</p>
+                    <p><i class="fas fa-envelope"></i> Email: info@acarreximaginario.com</p>
+                    <a href="https://wa.me/573209581095" target="_blank" class="whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i> Envíanos un WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 AcArrex Mudanzas. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/573209581095" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>

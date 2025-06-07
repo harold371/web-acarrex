@@ -1,0 +1,512 @@
+/* Variables de color */
+:root {
+    --color-primary: #FFD700; /* Dorado */
+    --color-secondary: #000000; /* Negro */
+    --color-background-light: #FFFFFF; /* Blanco */
+    --color-text-dark: #333333;
+    --color-text-light: #F0F0F0;
+    --color-hover-gold: #e6c200; /* Dorado un poco más oscuro para hover */
+}
+
+/* Estilos Generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--color-background-light);
+    color: var(--color-text-dark);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-primary);
+}
+
+a:hover {
+    color: var(--color-hover-gold);
+}
+
+/* Encabezado */
+.header {
+    background-color: var(--color-secondary);
+    color: var(--color-background-light);
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Si no hay imagen de logo, podemos estilizar el texto del título del sitio */
+.header .logo .site-title {
+    font-size: 1.8em; /* Tamaño de fuente para el título del sitio */
+    font-weight: bold;
+    color: var(--color-primary); /* Color dorado para el título */
+    padding: 5px 0; /* Pequeño padding si es necesario */
+}
+
+/* REMOVIDO: .header .logo img { height: 50px; } */ /* Ya no hay imagen de logo */
+
+
+.nav-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-menu ul li {
+    position: relative;
+    margin-left: 30px;
+}
+
+.nav-menu ul li a {
+    color: var(--color-background-light);
+    font-weight: bold;
+    padding: 10px 0;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.nav-menu ul li a:hover {
+    color: var(--color-primary);
+}
+
+/* Dropdown Menu */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--color-secondary);
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-top: 3px solid var(--color-primary);
+}
+
+.dropdown-content a {
+    color: var(--color-background-light);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #333;
+    color: var(--color-primary);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.contact-info {
+    color: var(--color-primary);
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/* Sección Hero (Banner principal) */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('Camiones-rodando-por-carretera.jpg') no-repeat center center/cover;
+    color: var(--color-background-light);
+    text-align: center;
+    padding: 150px 20px 100px; /* Ajusta el padding superior para el header fijo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 600px; /* Altura mínima del banner */
+    position: relative;
+    overflow: hidden; /* Para contener animaciones si se añaden más */
+}
+
+.hero-content {
+    max-width: 800px;
+    animation: fadeIn 1.5s ease-out; /* Animación de aparición */
+}
+
+.hero-content h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: var(--color-primary); /* Título dorado */
+}
+
+.hero-content p {
+    font-size: 1.4em;
+    margin-bottom: 40px;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-hover-gold);
+    transform: translateY(-3px);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Secciones Generales */
+section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+section:nth-child(even) {
+    background-color: #f8f8f8; /* Un ligero gris para alternar secciones */
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: var(--color-secondary);
+    position: relative;
+    display: inline-block;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-primary);
+    margin: 10px auto 0;
+}
+
+.section-description {
+    font-size: 1.1em;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto 50px;
+}
+
+/* Servicios Destacados */
+.featured-services .service-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.service-card {
+    background-color: var(--color-background-light);
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 30px;
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.service-card .icon-large {
+    font-size: 3em;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-size: 1.5em;
+    color: var(--color-secondary);
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    color: #555;
+}
+
+/* Sección de Cotización */
+.quote-section {
+    background-color: var(--color-secondary);
+    color: var(--color-background-light);
+}
+
+.quote-section h2 {
+    color: var(--color-primary);
+}
+
+.quote-section h2::after {
+    background-color: var(--color-background-light);
+}
+
+.quote-form {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--color-primary);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: calc(100% - 20px);
+    padding: 12px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #333;
+    color: var(--color-background-light);
+    font-size: 1em;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #999;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.3);
+}
+
+.quote-form button {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.quote-form button:hover {
+    background-color: var(--color-hover-gold);
+    transform: translateY(-3px);
+}
+
+/* Testimonios */
+.testimonials-section {
+    background-color: var(--color-background-light);
+}
+
+.testimonial-slider {
+    display: flex;
+    overflow-x: auto; /* Permite scroll horizontal si hay muchos */
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 20px;
+    justify-content: center; /* Centra los elementos si no ocupan todo el ancho */
+    padding-bottom: 20px; /* Espacio para scrollbar si aparece */
+}
+
+.testimonial-item {
+    flex: 0 0 350px; /* Tamaño fijo para cada testimonio */
+    scroll-snap-align: start;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.testimonial-item p {
+    font-style: italic;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    color: #444;
+}
+
+.testimonial-item span {
+    display: block;
+    font-weight: bold;
+    color: var(--color-primary);
+}
+
+/* Contacto */
+.contact-section {
+    background-color: #f0f0f0;
+}
+
+.contact-methods p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.contact-methods i {
+    color: var(--color-primary);
+    margin-right: 10px;
+}
+
+.whatsapp-btn {
+    display: inline-block;
+    background-color: #25D366; /* Verde WhatsApp */
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+    background-color: #1DA851;
+    transform: translateY(-2px);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--color-secondary);
+    color: var(--color-background-light);
+    text-align: center;
+    padding: 25px 0;
+    font-size: 0.9em;
+}
+
+/* Botón flotante de WhatsApp */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25D366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header .logo {
+        margin-bottom: 10px;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .nav-menu ul li {
+        margin-left: 0;
+    }
+
+    .dropdown-content {
+        position: static; /* Para que el dropdown se muestre debajo en móviles */
+        width: 100%;
+        box-shadow: none;
+        border-top: none;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-content p {
+        font-size: 1.2em;
+    }
+
+    .service-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-card {
+        max-width: 90%;
+    }
+
+    .quote-form {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2em;
+    }
+
+    .hero-content p {
+        font-size: 1em;
+    }
+
+    .btn-primary {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 25px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
